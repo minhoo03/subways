@@ -403,6 +403,7 @@
 }
 
 #wrap > section #menu-tab > .content > ul {
+    width: 615px;
     display: inline-block;
     position: absolute;
     top: 50%;
@@ -421,12 +422,16 @@
 }
 
 #wrap > section #menu-tab > .content > ul > li.active {
-    color: #009223;
+    color: #46eb6d;
     font-weight: bold;
 }
 
 #wrap > section #menu-tab > .content > ul > li:last-child {
     color: #000000;
+}
+
+#wrap > section #menu-tab > .content > ul > li:last-child.active {
+    color: orange;
 }
 
 #wrap > section #menu-tab > .content > ul > li::after {

@@ -70,7 +70,27 @@ $(document).ready(() => {
         $(target).find('.icon').stop().animate({'bottom':'100px','opacity':'0'},300)
     })
 
-    menu.on('mouseleave', () => {
+    var menuTab = $('#menu-tab ul > li')
 
+    menuTab.on('click', (event) => {
+        // const {target : {currentTarget}} = event
+        var target = event.currentTarget
+        // menu라는 이름의 data를 가져옴 (149줄)
+        var menuName = $(target).data('menu')
+        
+        menuTab.removeClass('active')
+        $(target).addClass('active')
+
+        $(menu).stop().animate({
+            'opacity' : '0'
+        }, 400 ,() => {
+            $(menu).css({'display':'none'})
+
+            if(menuName === 'all'){
+                $(menu).stop().css({'display':'block'}).animate({'opacity':'1'})
+            } else {
+                $(`.${menuName}`).stop().css({'display':'block'}).animate({'opacity':'1'})
+            }
+        })
     })
 })
