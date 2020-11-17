@@ -30,10 +30,31 @@ window.addEventListener('DOMContentLoaded', () => {
             "view_id": "pm14"
         }]
 
+        const tamplateSandwich = (sandwich) => {
+            const {ko_title, en_title, kcal, summary, type, img, label, view_id} = sandwich
+
+            return `
+                <li class="${type}">
+                    <a href="#">
+                        <div class="label">${label}</div>
+                        <div class="img">
+                            <img src="${img}" alt="${ko_title}">
+                        </div>
+                        <strong class="ko_title">${ko_title}</strong>
+                        <span class="en_title">${en_title}</span>
+                        <span class="kcal">${kcal}</span>
+                        <p class="desc">${summary}</p>
+                        <div class="icon" data-id="${view_id}"></div>
+                    </a>
+                </li>
+            `
+        }
+
         const listSandwich = () => {
             // for(var i = 0; i >= sanwiches.length; i++)
             for(const sandwich of sandwiches){
-                console.log(sandwich)
+                const node = $(tamplateSandwich(sandwich))[0]
+                console.log(node)
             }
         }
         listSandwich()
