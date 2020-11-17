@@ -24,6 +24,8 @@
     height: 175px;
     border-top: 5px solid #009223;
     background-color: #ffffff;
+
+    z-index: 20;
 }
 
 #wrap > header::after {
@@ -129,7 +131,7 @@
 }
 
 #wrap > header nav > .gnb > ul > li:hover > .snb {
-    display: inline-block;
+    /* display: inline-block; */
 }
 
 #wrap > header nav > .gnb > ul > li > a {
@@ -348,6 +350,7 @@
     height: 380px;
     background-color: #e85a1c;
     text-align: center;
+    overflow: hidden;
 }
 
 #wrap > section .main > .banner > h2 {
