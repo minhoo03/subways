@@ -151,8 +151,8 @@ $(document).ready(() => {
             // for(var i = 0; i >= sanwiches.length; i++)
             for(const sandwich of sandwiches){
                 const node = $(tamplateSandwich(sandwich))[0]
-                $(node).on('mouseenter', menuShow())
-                $(node).on('mouseleave', menuHide())
+                $(node).on('mouseenter', menuShow);
+                $(node).on('mouseleave', menuHide);
                 menuWrap.append(node)
             }
         }
